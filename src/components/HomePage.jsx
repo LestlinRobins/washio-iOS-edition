@@ -17,23 +17,28 @@ function HomePage() {
                     <img className="washing-machine-img" src="src/assets/main-icon.png" />
                 </div>
                 <div className="home-page-selection">
-                    <div style={{ fontFamily: 'monospace' }}>
+                    <div style={{ fontFamily: 'Jetbrains-B', fontSize: '7vw' }}>
                         Select your floor
                     </div>
-                    <div>
+                    <div style={{ fontFamily: 'Jetbrains-XLI', fontSize: '3vw', color: 'grey' }}>
                         Kalapurackal Edition
                     </div>
                 </div>
                 <div className="home-page-buttons">
-                    <Button variant="contained" sx={{ backgroundColor: 'white', color: 'black', borderRadius: 20, paddingLeft: 4, paddingRight: 4 }} >
+                    <Button variant="contained" sx={{ backgroundColor: 'white', color: 'black', borderRadius: 20, paddingLeft: 4, paddingRight: 4, fontFamily: 'Jetbrains-R', textTransform: 'None', fontSize: 15, height: '5vh', width: '50vw' }} >
                         Ground Floor
                     </Button>
-                    <Button variant="contained" sx={{ backgroundColor: 'white', color: 'black', borderRadius: 20, paddingLeft: 4, paddingRight: 4 }} >
-                        Ground Floor
+                    <Button variant="contained" sx={{ backgroundColor: 'white', color: 'black', borderRadius: 20, paddingLeft: 4, paddingRight: 4, fontFamily: 'Jetbrains-R', textTransform: 'None', fontSize: 15, height: '5vh' }} >
+                        First Floor
                     </Button>
-                    <Button variant="contained" sx={{ backgroundColor: 'white', color: 'black', borderRadius: 20, paddingLeft: 4, paddingRight: 4 }} >
-                        Ground Floor
+                    <Button variant="contained" sx={{ backgroundColor: 'white', color: 'black', borderRadius: 20, paddingLeft: 4, paddingRight: 4, fontFamily: 'Jetbrains-R', textTransform: 'None', fontSize: 15, height: '5vh' }} >
+                        Second Floor
                     </Button>
+                </div>
+                <div className="home-page-copyright-section">
+                    Version 1.0.1
+                    <br></br>
+                    © 2024 Washio. All rights reserved.
                 </div>
             </div>
         </div>

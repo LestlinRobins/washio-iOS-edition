@@ -1,3 +1,38 @@
+@font-face {
+  font-family: 'Jetbrains-B';
+  src: url('./fonts/JetBrainsMono-Bold.ttf');
+}
+
+@font-face {
+  font-family: 'Jetbrains-L';
+  src: url('./fonts/JetBrainsMono-Light.ttf');
+}
+
+@font-face {
+  font-family: 'Jetbrains-XL';
+  src: url('./fonts/JetBrainsMono-ExtraLight.ttf');
+}
+
+@font-face {
+  font-family: 'Jetbrains-R';
+  src: url('./fonts/JetBrainsMono-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Jetbrains-RI';
+  src: url('./fonts/JetBrainsMono-Italic.ttf');
+}
+
+@font-face {
+  font-family: 'Jetbrains-LI';
+  src: url('./fonts/JetBrainsMono-LightItalic.ttf');
+}
+
+@font-face {
+  font-family: 'Jetbrains-XLI';
+  src: url('./fonts/JetBrainsMono-ExtraLightItalic.ttf');
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -61,6 +96,8 @@
 
 .home-page-header-app-name {
   margin-left: 5vw;
+  font-family: 'Jetbrains-B';
+  font-size: 5vw;
 }
 
 .home-page-header-info-button {
@@ -75,24 +112,32 @@
 
 .washing-machine-logo {
   top: 12vh;
-  width: 50vw;
+  width: 55vw;
   position: fixed;
   align-self: center;
 }
 
 .washing-machine-img {
-  width: 50vw;
+  width: 55vw;
 }
 
 .home-page-selection {
   position: fixed;
-  top: 40vh;
+  top: 37vh;
 }
 
 .home-page-buttons {
   position: fixed;
-  top: 50vh;
+  top: 55vh;
   display: flex;
   flex-direction: column;
   gap: 2vh;
+}
+
+.home-page-copyright-section {
+  position: fixed;
+  bottom: 10vh;
+  font-family: 'Jetbrains-XLI';
+  color: grey;
+  font-size: 12px;
 }
