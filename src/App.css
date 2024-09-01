@@ -1,0 +1,98 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.home-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  color: rgb(255, 255, 255);
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  height: 10vh;
+  left: 0px;
+  right: 0px;
+  background-color: rgba(64, 64, 64, 255);
+}
+
+.home-page-header-app-name {
+  margin-left: 5vw;
+}
+
+.home-page-header-info-button {
+  margin-right: 5vw;
+}
+
+.home-page-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.washing-machine-logo {
+  top: 12vh;
+  width: 50vw;
+  position: fixed;
+  align-self: center;
+}
+
+.washing-machine-img {
+  width: 50vw;
+}
+
+.home-page-selection {
+  position: fixed;
+  top: 40vh;
+}
+
+.home-page-buttons {
+  position: fixed;
+  top: 50vh;
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+}
