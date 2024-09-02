@@ -19,10 +19,10 @@ function HomePage() {
                     <img className="washing-machine-img" src="src/assets/main-icon.png" />
                 </div>
                 <div className="home-page-selection">
-                    <div style={{ fontFamily: 'Jetbrains-B', fontSize: '7vw' }}>
+                    <div style={{ fontFamily: 'Jetbrains-B', fontSize: '8vw' }}>
                         Select your floor
                     </div>
-                    <div style={{ fontFamily: 'Jetbrains-XLI', fontSize: '3vw', color: 'grey' }}>
+                    <div style={{ fontFamily: 'Jetbrains-XLI', fontSize: '4vw', color: 'grey' }}>
                         Kalapurackal Edition
                     </div>
                 </div>
@@ -38,8 +38,8 @@ function HomePage() {
                                 paddingRight: 4,
                                 fontFamily: 'Jetbrains-R',
                                 textTransform: 'None',
-                                fontSize: 15,
-                                height: '5vh',
+                                fontSize: 16,
+                                height: '6vh',
                                 width: '50vw'
                             }}
                         >
@@ -57,8 +57,8 @@ function HomePage() {
                                 paddingRight: 4,
                                 fontFamily: 'Jetbrains-R',
                                 textTransform: 'None',
-                                fontSize: 15,
-                                height: '5vh',
+                                fontSize: 16,
+                                height: '6vh',
                                 width: '50vw'
                             }} >
                             First Floor
@@ -75,8 +75,8 @@ function HomePage() {
                                 paddingRight: 4,
                                 fontFamily: 'Jetbrains-R',
                                 textTransform: 'None',
-                                fontSize: 15,
-                                height: '5vh',
+                                fontSize: 16,
+                                height: '6vh',
                                 width: '50vw'
                             }} >
                             Second Floor

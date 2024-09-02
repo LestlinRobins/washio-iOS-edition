@@ -88,7 +88,7 @@
   position: fixed;
   width: 100%;
   top: 0px;
-  height: 10vh;
+  height: 7vh;
   left: 0px;
   right: 0px;
   background-color: rgba(64, 64, 64, 255);
@@ -111,24 +111,24 @@
 }
 
 .washing-machine-logo {
-  top: 12vh;
-  width: 55vw;
+  top: 8vh;
+  width: 50vw;
   position: fixed;
   align-self: center;
 }
 
 .washing-machine-img {
-  width: 55vw;
+  width: 50vw;
 }
 
 .home-page-selection {
   position: fixed;
-  top: 37vh;
+  top: 33vh;
 }
 
 .home-page-buttons {
   position: fixed;
-  top: 55vh;
+  top: 50vh;
   display: flex;
   flex-direction: column;
   gap: 2vh;
@@ -140,4 +140,35 @@
   font-family: 'Jetbrains-XLI';
   color: grey;
   font-size: 12px;
+}
+
+.ground-page-header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  color: rgb(255, 255, 255);
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  height: 7vh;
+  left: 0px;
+  right: 0px;
+  background-color: rgba(64, 64, 64, 255);
+}
+
+.ground-page-header-app-name {
+  font-family: 'Jetbrains-B';
+  font-size: 4vw;
+  margin-left: -5vw;
+}
+
+.back-button {
+  display: flex;
+  align-self: center;
+}
+
+.refresh-button {
+  display: flex;
+  align-self: center;
 }
