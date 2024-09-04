@@ -227,6 +227,31 @@ body {
 }
 
 .booking-input-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5vh;
   position: fixed;
-  left: 5vw;
+  top: 10vh;
+}
+
+.MuiInputBase-input {
+  color: white !important;
+}
+
+.MuiFormLabel-root {
+  color: white !important;
+}
+
+.MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
+  border: none;
+}
+
+.MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+  border-color: white !important;
+  border: 1px solid white !important;
+}
+
+.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: white !important;
+  border: 1px solid white !important;
 }
