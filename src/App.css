@@ -229,4 +229,15 @@ body {
 .booking-input-section {
   position: fixed;
   left: 5vw;
+  top: 23vw;
+  right: 5vw;
+}
+
+.input-text-field {
+  
+  border-radius: 5px;
+}
+
+.input-time-picker {
+  color: white;
 }

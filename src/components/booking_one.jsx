@@ -1,6 +1,6 @@
 import React from "react";
 import { ArrowBack } from "@mui/icons-material";
-import { Input, TextField } from "@mui/material";
+import { Button, Input, TextField } from "@mui/material";
 import { Link } from "react-router-dom";
 
 function BookingOne() {
@@ -19,7 +19,14 @@ function BookingOne() {
                 </header>
             </div>
             <div className="booking-input-section">
-                <TextField color="white" fullWidth sx={{ border: '1px solid', borderColor: 'white', color: 'white' }} label="Name" variant="outlined" />
+                <TextField color="white" fullWidth sx={{ border: '1px solid', borderColor: 'white', color: 'white' }} label="Name" variant="outlined" className="input-text-field"/>
+                <TextField color="white" fullWidth sx={{ border: '1px solid', borderColor: 'white', color: 'white' }} label="Room No." variant="outlined" className="input-text-field"/>
+                <TextField color="white" fullWidth sx={{ border: '1px solid', borderColor: 'white', color: 'white' }} label="Phone No." variant="outlined" className="input-text-field"/>
+                <Input type="time" color="white" className="input-time-picker"/>
+                <Input type="time" color="white" className="input-time-picker"/>
+                 {/*Submit Button  */}
+                
+
             </div>
         </div>
     )
