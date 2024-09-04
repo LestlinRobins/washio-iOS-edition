@@ -192,3 +192,41 @@ body {
 .table-start {
   margin-top: 2.5vh;
 }
+
+.floating-button {
+  position: fixed;
+  right: 2vh;
+  bottom: 2vh;
+}
+
+.booking-page-header {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 11vw;
+  padding-left: 10vw;
+  color: rgb(255, 255, 255);
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  height: 7vh;
+  right: 0px;
+  background-color: rgba(64, 64, 64, 255);
+}
+
+.booking-page-header-app-name {
+  font-family: 'Jetbrains-B';
+  font-size: 4vw;
+  margin-left: -5vw;
+}
+
+.booking-back-button {
+  padding-left: 6vw;
+  display: flex;
+  align-self: center;
+}
+
+.booking-input-section {
+  position: fixed;
+  left: 5vw;
+}
