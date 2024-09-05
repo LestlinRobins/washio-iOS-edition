@@ -24,11 +24,11 @@ function BookingOne() {
         const formattedStartTime = dayjs(StartTime).format("HH:mm")
         const formattedEndTime = dayjs(EndTime).format("HH:mm")
         let status = ''
-        if (dayjs(StartTime).isBefore(dayjs())) {
-            status = 'active'
+        if (dayjs(StartTime).isBefore(dayjs()) && dayjs(EndTime).isAfter(dayjs())) {
+            status = 'Active'
         }
         else if (dayjs(StartTime).isAfter(dayjs())) {
-            status = 'pending'
+            status = 'Pending'
         }
         else if (dayjs(EndTime).isBefore(dayjs())) {
             status = 'Finished'
