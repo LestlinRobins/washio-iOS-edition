@@ -246,12 +246,10 @@ body {
   border: none;
 }
 
-.MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+/* .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
   border-color: white !important;
-  border: 1px solid white !important;
-}
+} */
 
-.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+/* .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
   border-color: white !important;
-  border: 1px solid white !important;
-}
+} */
