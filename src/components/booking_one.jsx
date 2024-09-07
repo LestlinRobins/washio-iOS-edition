@@ -15,13 +15,8 @@ function BookingOne() {
     const [PhoneNo, setPhoneNo] = useState()
     const [error, setError] = useState('')
 
-    async function addDataOne() {
-        // const { data, error } = await supabase
-        //     .from('floor0')
-        //     .insert({ Name: 'Brooo', RoomNo: 90, Slot: '15:00 16:00', PhoneNo: 99000000000, Status: 'Active' })
-        //     .select()
-
-        // console.log(data)
+    async function evaluateData() {
+        let flag = false
         if (Name == '') {
             setError("Please enter your name!")
         }
@@ -31,10 +26,19 @@ function BookingOne() {
         else if (!PhoneNo) {
             setError("Please enter your phone number!")
         }
-        if (PhoneNo && Name !== '' && RoomNo) {
-            setError('')
+        else if (dayjs(StartTime).isBefore(dayjs()) || dayjs(EndTime).isBefore(dayjs())) {
+            setError("Please select a proper slot!1")
         }
-
+        else if (dayjs(StartTime).isAfter(dayjs(EndTime))) {
+            setError("Please select a proper slot!2")
+        }
+        if ((Name != '') && (RoomNo) && (PhoneNo) && (dayjs(StartTime).isBefore(dayjs(EndTime))) && (dayjs(StartTime).isAfter(dayjs())) && (dayjs(EndTime).isAfter(dayjs()))) {
+            setError('')
+            flag = true
+        }
+        if (flag) {
+            addDataOne()
+        }
         let status = ''
         if (dayjs(StartTime).isBefore(dayjs()) && dayjs(EndTime).isAfter(dayjs())) {
             status = 'Active'
@@ -45,12 +49,22 @@ function BookingOne() {
         else if (dayjs(EndTime).isBefore(dayjs())) {
             status = 'Finished'
         }
+
+    }
+    async function addDataOne() {
         const formattedStartTime = dayjs(StartTime).format("HH:mm")
         const formattedEndTime = dayjs(EndTime).format("HH:mm")
+        const Slot = formattedStartTime + '\n' + formattedEndTime
+        const formattedName = `${Name} (${RoomNo})`
         const data = {
-            Name, RoomNo, formattedStartTime, formattedEndTime, PhoneNo, status
+            Name: formattedName, RoomNo, Slot, PhoneNo
         }
-        console.log(data)
+        const { response, error1 } = await supabase
+            .from('floor0')
+            .insert(data)
+            .select()
+        console.log(response)
+        console.log(error1)
     }
     return (
         <div style={{
@@ -117,6 +131,7 @@ function BookingOne() {
                         }
                     }}
                     label="Room No."
+                    type="number"
                     variant="outlined"
                     onChange={(e) => {
                         setRoomNo(e.target.value)
@@ -137,6 +152,7 @@ function BookingOne() {
                         }
                     }}
                     label="Phone No."
+                    type="number"
                     variant="outlined"
                     onChange={(e) => {
                         setPhoneNo(e.target.value)
@@ -192,7 +208,7 @@ function BookingOne() {
                         height: '6vh',
                         width: '45vw'
                     }}
-                    onClick={() => addDataOne()}
+                    onClick={() => evaluateData()}
                 >
                     Submit
                 </Button>

@@ -3,6 +3,8 @@ import GroundFloor from "./components/groundFloor";
 import FirstFloor from "./components/firstFloor";
 import SecondFloor from "./components/secondFloor";
 import BookingOne from "./components/booking_one";
+import BookingTwo from "./components/booking_two";
+import BookingThree from "./components/booking_three";
 import {
   BrowserRouter as Router,
   Routes,
@@ -36,6 +38,14 @@ function App() {
           <Route
             path="/BookingOne"
             element={<BookingOne />}
+          />
+          <Route
+            path="/BookingTwo"
+            element={<BookingTwo />}
+          />
+          <Route
+            path="/BookingThree"
+            element={<BookingThree />}
           />
         </Routes>
       </Router>

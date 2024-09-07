@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { createClient } from "@supabase/supabase-js";
-import { ArrowBack, Refresh, Widgets } from "@mui/icons-material";
+import { ArrowBack, Refresh, Add } from "@mui/icons-material";
 import dayjs from "dayjs";
-import { Table, TableBody, TableHead, TableContainer, TableCell, TableRow, tableCellClasses } from "@mui/material";
+import { Table, TableBody, TableHead, TableContainer, TableCell, TableRow, Fab } from "@mui/material";
 import { supabase } from "../supabase";
 
 function FirstFloor() {
@@ -52,19 +52,34 @@ function FirstFloor() {
                             {slots.map((row) => (
                                 <TableRow
                                     key={row.Name}
-                                    sx={{ '&:last-child td, &:last-child th': { border: 0, color: 'white' } }}
+                                    sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                                 >
                                     <TableCell sx={{ color: 'white', fontFamily: 'Jetbrains-R' }} component="th" scope="row">{row.Name}</TableCell>
                                     <TableCell sx={{ color: 'white', fontFamily: 'Jetbrains-R', padding: 0, margin: 0 }} align="center">
                                         <p style={{ padding: 0, margin: 0 }}>{(row.Slot).split(" ")[0]}</p>
                                         <p style={{ padding: 0, margin: 0 }}>{(row.Slot).split(" ")[1]}</p>
                                     </TableCell>
-                                    <TableCell sx={{ color: 'white', fontFamily: 'Jetbrains-R' }} align="left">{row.Status}</TableCell>
+                                    {row.Status == 'Active' &&
+                                        <TableCell sx={{ color: '#04a302', fontFamily: 'Jetbrains-R' }} align="left">{row.Status}</TableCell>
+                                    }
+                                    {row.Status == 'Finished' &&
+                                        <TableCell sx={{ color: '#505050', fontFamily: 'Jetbrains-R' }} align="left">{row.Status}</TableCell>
+                                    }
+                                    {row.Status == 'Pending' &&
+                                        <TableCell sx={{ color: 'red', fontFamily: 'Jetbrains-R' }} align="left">{row.Status}</TableCell>
+                                    }
                                 </TableRow>
                             ))}
                         </TableBody>
                     </Table>
                 </TableContainer>
+            </div>
+            <div className="floating-button">
+                <Link to='/BookingTwo'>
+                    <Fab sx={{ borderRadius: 4, width: 50, height: 50, backgroundColor: '#673ab7', color: 'white' }} aria-label="add">
+                        <Add />
+                    </Fab>
+                </Link>
             </div>
         </div>
     )

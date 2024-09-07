@@ -8,7 +8,7 @@ import { supabase } from "../supabase";
 
 function GroundFloor() {
     const [slots, setSlots] = useState([])
-    const [booking, setBooking] = useState(false)
+
     useEffect(() => {
         getSlots()
     }, [])
@@ -68,7 +68,6 @@ function GroundFloor() {
                                     {row.Status == 'Pending' &&
                                         <TableCell sx={{ color: 'red', fontFamily: 'Jetbrains-R' }} align="left">{row.Status}</TableCell>
                                     }
-
                                 </TableRow>
                             ))}
                         </TableBody>
