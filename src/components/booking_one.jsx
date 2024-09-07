@@ -13,6 +13,7 @@ function BookingOne() {
     const [StartTime, setStartTime] = useState(dayjs())
     const [EndTime, setEndTime] = useState(dayjs().add(1, 'hours'))
     const [PhoneNo, setPhoneNo] = useState()
+    const [error, setError] = useState('')
 
     async function addDataOne() {
         // const { data, error } = await supabase
@@ -21,8 +22,19 @@ function BookingOne() {
         //     .select()
 
         // console.log(data)
-        const formattedStartTime = dayjs(StartTime).format("HH:mm")
-        const formattedEndTime = dayjs(EndTime).format("HH:mm")
+        if (Name == '') {
+            setError("Please enter your name!")
+        }
+        else if (!RoomNo) {
+            setError("Please enter your room number!")
+        }
+        else if (!PhoneNo) {
+            setError("Please enter your phone number!")
+        }
+        if (PhoneNo && Name !== '' && RoomNo) {
+            setError('')
+        }
+
         let status = ''
         if (dayjs(StartTime).isBefore(dayjs()) && dayjs(EndTime).isAfter(dayjs())) {
             status = 'Active'
@@ -33,6 +45,8 @@ function BookingOne() {
         else if (dayjs(EndTime).isBefore(dayjs())) {
             status = 'Finished'
         }
+        const formattedStartTime = dayjs(StartTime).format("HH:mm")
+        const formattedEndTime = dayjs(EndTime).format("HH:mm")
         const data = {
             Name, RoomNo, formattedStartTime, formattedEndTime, PhoneNo, status
         }
@@ -182,8 +196,12 @@ function BookingOne() {
                 >
                     Submit
                 </Button>
-
             </div>
+            {error !== '' && (
+                <div className="booking-error-toast">
+                    {error}
+                </div>
+            )}
         </div>
     )
 }

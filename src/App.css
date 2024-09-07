@@ -253,3 +253,15 @@ body {
 /* .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
   border-color: white !important;
 } */
+
+.booking-error-toast {
+  position: fixed;
+  bottom: 1vh;
+  color: red;
+  padding: 1vw;
+  border-radius: 1vh;
+  width: 90%;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: row;
+}
