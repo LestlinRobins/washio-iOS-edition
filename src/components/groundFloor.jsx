@@ -28,7 +28,7 @@ function GroundFloor() {
                 <div className="ground-page-header-app-name">
                     Ground Floor Slot Booking
                 </div>
-                <div className="refresh-button">
+                <div className="refresh-button" onClick={() => getSlots()}>
                     <Refresh></Refresh>
                 </div>
             </header>
