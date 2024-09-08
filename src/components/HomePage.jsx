@@ -64,7 +64,7 @@ function HomePage() {
             )}
             <div className="home-page-screen">
                 <div className="washing-machine-logo">
-                    <img className="washing-machine-img" src="src/assets/main-icon.png" />
+                    <img className="washing-machine-img" src="./public/main-icon.png" />
                 </div>
                 <div className="home-page-selection">
                     <div style={{ fontFamily: 'Jetbrains-B', fontSize: '8vw' }}>
