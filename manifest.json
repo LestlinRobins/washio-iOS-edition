@@ -1,0 +1,12 @@
+{
+    "name": "Wash.io",
+    "icons": [
+        {
+            "src": "public/app-icon.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ],
+    "start_url": "https://washio-ios-edition.vercel.app/",
+    "display": "standalone"
+}
