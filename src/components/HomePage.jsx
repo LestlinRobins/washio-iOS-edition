@@ -3,7 +3,6 @@ import Button from '@mui/material/Button';
 import { Link } from "react-router-dom";
 import { Info } from "@mui/icons-material";
 
-
 function HomePage() {
     const [devInfo, showDevInfo] = useState(false)
     return (

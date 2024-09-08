@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ArrowBack, AccessTime } from "@mui/icons-material";
 import { TextField, Button } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { TimePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import dayjs, { Dayjs } from "dayjs";
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { supabase } from "../supabase";
+import isBetween from 'dayjs/plugin/isBetween'
 
 function BookingTwo() {
     const [Name, setName] = useState('')
@@ -14,9 +15,21 @@ function BookingTwo() {
     const [EndTime, setEndTime] = useState(dayjs().add(1, 'hours'))
     const [PhoneNo, setPhoneNo] = useState()
     const [error, setError] = useState('')
+    const [slots, setSlots] = useState([])
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        getSlots()
+    }, [])
+
+    async function getSlots() {
+        const { data } = await supabase.from("floor1").select();
+        setSlots(data);
+    }
 
     async function evaluateData() {
         let flag = false
+        let conflict = false
         if (Name == '') {
             setError("Please enter your name!")
         }
@@ -27,12 +40,21 @@ function BookingTwo() {
             setError("Please enter your phone number!")
         }
         else if (dayjs(StartTime).isBefore(dayjs()) || dayjs(EndTime).isBefore(dayjs())) {
-            setError("Please select a proper slot!1")
+            setError("Please select a proper slot!")
         }
         else if (dayjs(StartTime).isAfter(dayjs(EndTime))) {
-            setError("Please select a proper slot!2")
+            setError("Please select a proper slot!")
         }
-        if ((Name != '') && (RoomNo) && (PhoneNo) && (dayjs(StartTime).isBefore(dayjs(EndTime))) && (dayjs(StartTime).isAfter(dayjs())) && (dayjs(EndTime).isAfter(dayjs()))) {
+        slots.forEach((element) => {
+            const allotedSlotStartTime = element.Slot.split('\n')[0]
+            const allotedSlotEndTime = element.Slot.split('\n')[1]
+            if ((dayjs(StartTime).isBetween(dayjs(allotedSlotStartTime, 'HH:mm'), dayjs(allotedSlotEndTime, 'HH:mm')))) {
+                setError("Selected time conflicts with an already existing slot!")
+                conflict = true
+            }
+        })
+
+        if ((Name != '') && (RoomNo) && (PhoneNo) && (dayjs(StartTime).isBefore(dayjs(EndTime))) && (dayjs(StartTime).isAfter(dayjs())) && (dayjs(EndTime).isAfter(dayjs())) && (!conflict)) {
             setError('')
             flag = true
         }
@@ -56,15 +78,16 @@ function BookingTwo() {
         const formattedEndTime = dayjs(EndTime).format("HH:mm")
         const Slot = formattedStartTime + '\n' + formattedEndTime
         const formattedName = `${Name} (${RoomNo})`
-        const data = {
+        const slotdata = {
             Name: formattedName, RoomNo, Slot, PhoneNo
         }
         const { response, error1 } = await supabase
             .from('floor1')
-            .insert(data)
+            .insert(slotdata)
             .select()
         console.log(response)
         console.log(error1)
+        navigate('/FirstFloor')
     }
     return (
         <div style={{
