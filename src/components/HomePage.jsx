@@ -64,7 +64,7 @@ function HomePage() {
             )}
             <div className="home-page-screen">
                 <div className="washing-machine-logo">
-                    <img className="washing-machine-img" src="./public/main-icon.png" />
+                    <img className="washing-machine-img" src="https://media.discordapp.net/attachments/883222664066502716/1282284036013948939/main-icon.png?ex=66decb91&is=66dd7a11&hm=e98e3b50763d61601f75d18e2430f32ed79b86ea6415e2b20a35d0634d98d1e0&=&format=webp&quality=lossless&width=595&height=595" />
                 </div>
                 <div className="home-page-selection">
                     <div style={{ fontFamily: 'Jetbrains-B', fontSize: '8vw' }}>
