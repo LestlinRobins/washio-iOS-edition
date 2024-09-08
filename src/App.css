@@ -192,6 +192,8 @@ body {
 
 .home-page-copyright-section {
   position: fixed;
+  left: 0;
+  transform: translate(33%, 0%);
   bottom: 10vh;
   font-family: 'Jetbrains-XLI';
   color: grey;
