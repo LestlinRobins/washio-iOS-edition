@@ -177,7 +177,9 @@ body {
 
 .home-page-selection {
   position: fixed;
+  left: 0;
   top: 33vh;
+  transform: translate(10%, 25%);
 }
 
 .home-page-buttons {
