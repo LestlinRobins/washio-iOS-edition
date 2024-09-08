@@ -35,6 +35,7 @@
 
 #root {
   max-width: 1280px;
+  -webkit-overflow-scrolling: touch;
   margin: auto;
   padding: 0;
   text-align: center;
@@ -43,10 +44,12 @@
 
 html {
   background-color: rgba(29, 29, 29, 255);
+  -webkit-overflow-scrolling: touch;
 }
 
 body {
   background-color: rgba(29, 29, 29, 255);
+  -webkit-overflow-scrolling: touch;
 }
 
 .logo {
