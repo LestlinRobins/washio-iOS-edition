@@ -14,7 +14,7 @@ function GroundFloor() {
     }, [])
 
     async function getSlots() {
-        const { data } = await supabase.from("floor0").select();
+        const { data } = await supabase.from("floor0").select().order('Slot', { ascending: true });
         setSlots(data);
     }
     return (

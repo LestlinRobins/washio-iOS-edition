@@ -14,7 +14,7 @@ function SecondFloor() {
     }, [])
 
     async function getSlots() {
-        const { data } = await supabase.from("floor2").select();
+        const { data } = await supabase.from("floor2").select().order('Slot', { ascending: true });
         setSlots(data);
     }
     return (
