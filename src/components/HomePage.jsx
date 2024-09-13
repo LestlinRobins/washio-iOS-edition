@@ -64,7 +64,7 @@ function HomePage() {
             )}
             <div className="home-page-screen">
                 <div className="washing-machine-logo">
-                    <img className="washing-machine-img" src="https://media.discordapp.net/attachments/883222664066502716/1282284036013948939/main-icon.png?ex=66decb91&is=66dd7a11&hm=e98e3b50763d61601f75d18e2430f32ed79b86ea6415e2b20a35d0634d98d1e0&=&format=webp&quality=lossless&width=595&height=595" />
+                    <img className="washing-machine-img" src="https://media.discordapp.net/attachments/1284209142076276891/1284210279437172758/main-icon.png?ex=66e5cd86&is=66e47c06&hm=66097d904963f0c1d01e2885bc23464a9330bcb1c3c41086820bbea0efe7e913&=&format=webp&quality=lossless&width=653&height=653" />
                 </div>
                 <div className="home-page-selection">
                     <div style={{ fontFamily: 'Jetbrains-B', fontSize: '8vw' }}>
