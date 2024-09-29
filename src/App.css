@@ -231,9 +231,9 @@ body {
   top: 55vh;
   display: flex;
   flex-direction: row;
-  gap: 2vh;
+  gap: 1vh;
   width: 100vw;
-  transform: translate(22%, 0%);
+  transform: translate(17%, 0%);
 }
 
 .home-page-copyright-section {
@@ -241,8 +241,8 @@ body {
   left: 0;
   transform: translate(65%, 0%);
   bottom: 5vh;
-  font-family: 'Inter-XLI';
-  color: grey;
+  font-family: 'Inter-I';
+  color: rgb(172, 172, 172);
   font-size: 12px;
 }
 
@@ -289,11 +289,12 @@ body {
   font-family: 'Inter-B';
   font-size: 7vw;
   margin-top: 0px;
+  margin-bottom: 0.2vh;
   text-align: left;
 }
 
 .table-start {
-  margin-top: 9vh;
+  margin-top: 10vh;
 }
 
 .floating-button {
@@ -425,7 +426,7 @@ body {
   align-self: center;
   position: absolute;
   left: 50%;
-  top: 16%;
+  top: 17%;
   transform: translate(-50%, -50%);
   border: 2px solid #00ff08;
   padding: 1.5%;

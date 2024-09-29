@@ -85,11 +85,11 @@ function HomePage() {
                                 borderRadius: 3,
                                 paddingLeft: 4,
                                 paddingRight: 4,
-                                fontFamily: 'Jetbrains-R',
+                                fontFamily: 'Inter-B',
                                 textTransform: 'None',
-                                fontSize: 16,
-                                height: '8vh',
-                                width: '17vw',
+                                fontSize: 26,
+                                height: '10vh',
+                                width: '20vw',
                                 border: '2px solid green'
                             }}
                         >
@@ -105,11 +105,11 @@ function HomePage() {
                                 borderRadius: 3,
                                 paddingLeft: 4,
                                 paddingRight: 4,
-                                fontFamily: 'Jetbrains-R',
+                                fontFamily: 'Inter-B',
                                 textTransform: 'None',
-                                fontSize: 16,
-                                height: '8vh',
-                                width: '14vw',
+                                fontSize: 26,
+                                height: '10vh',
+                                width: '20vw',
                                 border: '2px solid green'
                             }} >
                             1
@@ -124,11 +124,11 @@ function HomePage() {
                                 borderRadius: 3,
                                 paddingLeft: 4,
                                 paddingRight: 4,
-                                fontFamily: 'Jetbrains-R',
+                                fontFamily: 'Inter-B',
                                 textTransform: 'None',
-                                fontSize: 16,
-                                height: '8vh',
-                                width: '14vw',
+                                fontSize: 26,
+                                height: '10vh',
+                                width: '20vw',
                                 border: '2px solid green'
                             }} >
                             2
@@ -138,7 +138,7 @@ function HomePage() {
                 <div className="home-page-copyright-section">
                     Kalappurackal Edition
                     <br></br>
-                    Version 1.0.1
+                    Version 2.0.1
                     <br></br>
                     © 2024 Washio. All rights reserved.
                 </div>
