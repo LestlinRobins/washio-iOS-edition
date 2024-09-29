@@ -239,7 +239,7 @@ body {
 .home-page-copyright-section {
   position: fixed;
   left: 0;
-  transform: translate(65%, 0%);
+  transform: translate(61%, 0%);
   bottom: 5vh;
   font-family: 'Inter-I';
   color: rgb(172, 172, 172);
