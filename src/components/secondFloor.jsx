@@ -94,13 +94,13 @@ function SecondFloor() {
                                         <p style={{ padding: 0, margin: 0 }}>{(row.Slot).split(" ")[1]}</p>
                                     </TableCell>
                                     {row.Status == 'Active' &&
-                                        <TableCell sx={{ color: '#04a302', fontFamily: 'Jetbrains-R' }} align="left">●</TableCell>
+                                        <TableCell sx={{ color: '#04a302', fontFamily: 'Jetbrains-R' }} align="left">⬤</TableCell>
                                     }
                                     {row.Status == 'Finished' &&
-                                        <TableCell sx={{ color: '#505050', fontFamily: 'Jetbrains-R' }} align="left">●</TableCell>
+                                        <TableCell sx={{ color: '#505050', fontFamily: 'Jetbrains-R' }} align="left">⬤</TableCell>
                                     }
                                     {row.Status == 'Pending' &&
-                                        <TableCell sx={{ color: 'red', fontFamily: 'Jetbrains-R' }} align="left">●</TableCell>
+                                        <TableCell sx={{ color: 'red', fontFamily: 'Jetbrains-R' }} align="left">⬤</TableCell>
                                     }
                                 </TableRow>
                             ))}
