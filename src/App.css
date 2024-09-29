@@ -295,6 +295,8 @@ body {
 
 .table-start {
   margin-top: 10vh;
+  max-height: 550px;
+  margin-bottom: 4vh;
 }
 
 .floating-button {

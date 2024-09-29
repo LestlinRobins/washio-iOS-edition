@@ -62,7 +62,7 @@ function GroundFloor() {
                 </div>
             )}
 
-            <div className="table-start">
+            <div className="table-start" style={{ height: '500px', overflowY: 'auto' }}>
                 <TableContainer sx={{ boxShadow: 'none', border: 'none' }}>
                     <Table sx={{ margin: 0, padding: 0, width: '100vw', fontFamily: 'Inter-R', border: 'none', borderBottom: 'none', boxShadow: 'none' }} aria-label="simple table">
                         {/* <TableHead>
