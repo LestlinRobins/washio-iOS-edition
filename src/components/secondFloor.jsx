@@ -47,7 +47,7 @@ function SecondFloor() {
                     <div style={{ color: '#00ff08' }}>.</div>
                 </div>
             </div>
-            <div style={{ fontFamily: 'Inter-XLI', fontSize: '3.2vw', color: 'grey' }}>
+            <div style={{ fontFamily: 'Inter-LI', fontSize: '3.2vw', color: 'grey' }}>
                 Refresh the page for updating the list
             </div>
             {tomorrow ? (
