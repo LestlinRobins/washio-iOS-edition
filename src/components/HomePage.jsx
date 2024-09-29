@@ -6,7 +6,7 @@ import { Info } from "@mui/icons-material";
 function HomePage() {
     const [devInfo, showDevInfo] = useState(false)
     return (
-        <div>
+        <div className="main-home-page-div">
             <header className="home-page-header">
                 <div className="home-page-header-app-name">
                     Wash.io
@@ -64,14 +64,15 @@ function HomePage() {
             )}
             <div className="home-page-screen">
                 <div className="washing-machine-logo">
-                    <img className="washing-machine-img" src="https://media.discordapp.net/attachments/1284209142076276891/1284210279437172758/main-icon.png?ex=66e5cd86&is=66e47c06&hm=66097d904963f0c1d01e2885bc23464a9330bcb1c3c41086820bbea0efe7e913&=&format=webp&quality=lossless&width=653&height=653" />
+                    <img className="washing-machine-img" src="https://lh3.googleusercontent.com/d/1cHSA2kFOz8e1NQOhggPXCuUQZSI8UfG9=w1000?authuser=1/view" />
                 </div>
                 <div className="home-page-selection">
-                    <div style={{ fontFamily: 'Jetbrains-B', fontSize: '8vw' }}>
-                        Select your floor
+                    <div style={{ fontFamily: 'Inter-B', fontSize: '10vw', marginBottom: '-10px' }}>
+                        Select your
                     </div>
-                    <div style={{ fontFamily: 'Jetbrains-XLI', fontSize: '4vw', color: 'grey' }}>
-                        Kalapurackal Edition
+                    <div style={{ fontFamily: 'Inter-B', fontSize: '10vw', display: 'flex', flexDirection: 'row' }}>
+                        Floor
+                        <div style={{ color: '#00ff08' }}>.</div>
                     </div>
                 </div>
                 <div className="home-page-buttons">
@@ -79,60 +80,65 @@ function HomePage() {
                         <Button
                             variant="contained"
                             sx={{
-                                backgroundColor: 'white',
-                                color: 'black',
-                                borderRadius: 20,
+                                backgroundColor: 'transparent',
+                                color: 'white',
+                                borderRadius: 3,
                                 paddingLeft: 4,
                                 paddingRight: 4,
-                                fontFamily: 'Jetbrains-R',
+                                fontFamily: 'Inter-B',
                                 textTransform: 'None',
-                                fontSize: 16,
-                                height: '6vh',
-                                width: '50vw'
+                                fontSize: 26,
+                                height: '10vh',
+                                width: '20vw',
+                                border: '2px solid white'
                             }}
                         >
-                            Ground Floor
+                            0
                         </Button>
                     </Link>
                     <Link to="/FirstFloor">
                         <Button
                             variant="contained"
                             sx={{
-                                backgroundColor: 'white',
-                                color: 'black',
-                                borderRadius: 20,
+                                backgroundColor: 'transparent',
+                                color: 'white',
+                                borderRadius: 3,
                                 paddingLeft: 4,
                                 paddingRight: 4,
-                                fontFamily: 'Jetbrains-R',
+                                fontFamily: 'Inter-B',
                                 textTransform: 'None',
-                                fontSize: 16,
-                                height: '6vh',
-                                width: '50vw'
+                                fontSize: 26,
+                                height: '10vh',
+                                width: '20vw',
+                                border: '2px solid white'
                             }} >
-                            First Floor
+                            1
                         </Button>
                     </Link>
                     <Link to="/SecondFloor">
                         <Button
                             variant="contained"
                             sx={{
-                                backgroundColor: 'white',
-                                color: 'black',
-                                borderRadius: 20,
+                                backgroundColor: 'transparent',
+                                color: 'white',
+                                borderRadius: 3,
                                 paddingLeft: 4,
                                 paddingRight: 4,
-                                fontFamily: 'Jetbrains-R',
+                                fontFamily: 'Inter-B',
                                 textTransform: 'None',
-                                fontSize: 16,
-                                height: '6vh',
-                                width: '50vw'
+                                fontSize: 26,
+                                height: '10vh',
+                                width: '20vw',
+                                border: '2px solid white'
                             }} >
-                            Second Floor
+                            2
                         </Button>
                     </Link>
                 </div>
                 <div className="home-page-copyright-section">
-                    Version 1.0.1
+                    Kalappurackal Edition
+                    <br></br>
+                    Version 2.0.1
                     <br></br>
                     © 2024 Washio. All rights reserved.
                 </div>

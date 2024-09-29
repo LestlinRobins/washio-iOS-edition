@@ -33,6 +33,41 @@
   src: url('./fonts/JetBrainsMono-ExtraLightItalic.ttf');
 }
 
+@font-face {
+  font-family: 'Inter-R';
+  src: url('./fonts/Inter-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Inter-L';
+  src: url('./fonts/Inter-Light.ttf');
+}
+
+@font-face {
+  font-family: 'Inter-LI';
+  src: url('./fonts/Inter-LightItalic.ttf');
+}
+
+@font-face {
+  font-family: 'Inter-XL';
+  src: url('./fonts/Inter-ExtraLight.ttf');
+}
+
+@font-face {
+  font-family: 'Inter-XLI';
+  src: url('./fonts/Inter-ExtraLightItalic.ttf');
+}
+
+@font-face {
+  font-family: 'Inter-I';
+  src: url('./fonts/Inter-Italic.ttf');
+}
+
+@font-face {
+  font-family: 'Inter-B';
+  src: url('./fonts/Inter-Bold.ttf');
+}
+
 #root {
   max-width: 1280px;
   -webkit-overflow-scrolling: touch;
@@ -48,7 +83,7 @@ html {
 }
 
 body {
-  background-color: rgba(29, 29, 29, 255);
+  background-color: black;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -91,6 +126,16 @@ body {
   color: #888;
 }
 
+.main-home-page-div {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1;
+  background: radial-gradient(circle at top left, rgba(0, 255, 8, 0.4) 10%, transparent 40%);
+}
+
 .home-page-header {
   display: flex;
   justify-content: space-between;
@@ -103,12 +148,11 @@ body {
   height: 7vh;
   left: 0px;
   right: 0px;
-  background-color: rgba(64, 64, 64, 255);
 }
 
 .home-page-header-app-name {
   margin-left: 5vw;
-  font-family: 'Jetbrains-B';
+  font-family: 'Inter-B';
   font-size: 5vw;
 }
 
@@ -165,7 +209,7 @@ body {
 }
 
 .washing-machine-logo {
-  top: 8vh;
+  top: 12vh;
   width: 50vw;
   position: fixed;
   align-self: center;
@@ -177,32 +221,33 @@ body {
 
 .home-page-selection {
   position: fixed;
-  left: 0;
-  top: 33vh;
-  transform: translate(10%, 25%);
+  top: 40vh;
+  text-align: left;
+  align-self: center;
 }
 
 .home-page-buttons {
   position: fixed;
-  top: 50vh;
+  top: 55vh;
   display: flex;
-  flex-direction: column;
-  gap: 2vh;
+  flex-direction: row;
+  gap: 1vh;
+  width: 100vw;
+  transform: translate(17%, 0%);
 }
 
 .home-page-copyright-section {
   position: fixed;
   left: 0;
-  transform: translate(33%, 0%);
-  bottom: 10vh;
-  font-family: 'Jetbrains-XLI';
-  color: grey;
+  transform: translate(50%, 0%);
+  bottom: 5vh;
+  font-family: 'Inter-I';
+  color: rgb(172, 172, 172);
   font-size: 12px;
 }
 
 .ground-page-header {
   display: flex;
-  justify-content: space-around;
   align-items: center;
   flex-direction: row;
   color: rgb(255, 255, 255);
@@ -212,34 +257,44 @@ body {
   height: 7vh;
   left: 0px;
   right: 0px;
-  background-color: rgba(64, 64, 64, 255);
+  background-color: black;
 }
 
 .ground-page-header-app-name {
-  font-family: 'Jetbrains-B';
+  font-family: 'Inter-B';
   font-size: 4vw;
-  margin-left: -5vw;
+  margin-left: -9vw;
+  margin-right: 11vw;
+  position: fixed;
+  left: 25vw;
 }
 
 .back-button {
   display: flex;
   align-self: center;
+  position: fixed;
+  left: 5vw;
+  top: 2.24%;
 }
 
 .refresh-button {
   display: flex;
   align-self: center;
+  position: fixed;
+  right: 5vw;
 }
 
 .date-section {
   align-self: center;
-  font-family: 'Jetbrains-B';
-  font-size: 4.5vw;
+  font-family: 'Inter-B';
+  font-size: 7vw;
   margin-top: 0px;
+  margin-bottom: 0.2vh;
+  text-align: left;
 }
 
 .table-start {
-  margin-top: 2.5vh;
+  margin-top: 10vh;
 }
 
 .floating-button {
@@ -260,11 +315,11 @@ body {
   top: 0px;
   height: 7vh;
   right: 0px;
-  background-color: rgba(64, 64, 64, 255);
+  background-color: black;
 }
 
 .booking-page-header-app-name {
-  font-family: 'Jetbrains-B';
+  font-family: 'Inter-B';
   font-size: 4vw;
   margin-left: -5vw;
 }
@@ -281,6 +336,20 @@ body {
   gap: 1.5vh;
   position: fixed;
   top: 10vh;
+  height: 100vh;
+  background: radial-gradient(circle at bottom left, rgba(0, 255, 8, 0.4) 10%, transparent 40%);
+  width: 100vw;
+}
+
+.booking-date-section {
+  border: 3px solid #00ff08;
+  width: 50vw;
+  font-family: 'Inter-R';
+  font-size: 20px;
+  align-self: center;
+  padding: 2%;
+  border-radius: 15px;
+  margin-bottom: 1vh;
 }
 
 .MuiInputBase-input {
@@ -293,6 +362,7 @@ body {
 
 .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
   border: none;
+  border-radius: 20px !important;
 }
 
 /* .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
@@ -313,4 +383,80 @@ body {
   align-items: flex-start;
   display: flex;
   flex-direction: row;
+}
+
+.data-div {
+  max-width: max-content;
+  display: flex;
+  flex-direction: row;
+  border-radius: 10px;
+}
+
+.phone-no-div {
+  background-color: rgb(69, 69, 69);
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 5px;
+}
+
+.room-no-div {
+  background-color: rgb(34, 34, 34);
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 5px;
+  margin-left: -4px;
+  font-size: 15px;
+}
+
+.main-div-in-floor {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  position: fixed;
+  top: 10vh;
+  left: 0;
+  align-items: center;
+  background: radial-gradient(circle at bottom left, rgba(0, 255, 8, 0.4) 10%, transparent 40%);
+}
+
+.tab-switcher {
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  position: absolute;
+  left: 50%;
+  top: 17%;
+  transform: translate(-50%, -50%);
+  border: 2px solid #00ff08;
+  padding: 1.5%;
+  border-radius: 20px;
+  width: 64vw;
+  height: 5vh;
+  align-items: center;
+}
+
+.tab-switcher-tab-active {
+  background-color: #00ff08;
+  display: flex;
+  border-radius: 15px;
+  padding-left: 12%;
+  padding-right: 12%;
+  align-items: center;
+  font-weight: bold;
+  font-size: 17px;
+  height: 5vh;
+}
+
+.tab-switcher-tab {
+  padding: 5%;
+  border-radius: 10px;
+  padding-left: 12%;
+  padding-right: 12%;
+  align-items: center;
+  display: flex;
+  font-weight: bold;
+  font-size: 17px;
+  height: 5vh;
 }

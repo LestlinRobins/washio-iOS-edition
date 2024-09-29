@@ -8,7 +8,7 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { supabase } from "../supabase";
 import isBetween from 'dayjs/plugin/isBetween'
 
-function BookingThree() {
+function BookingTwoTomorrow() {
     const [Name, setName] = useState('')
     const [RoomNo, setRoomNo] = useState()
     const [StartTime, setStartTime] = useState(dayjs())
@@ -22,7 +22,7 @@ function BookingThree() {
     }, [])
 
     async function getSlots() {
-        const { data } = await supabase.from("floor2").select();
+        const { data } = await supabase.from("floor1_nextday").select();
         setSlots(data);
     }
 
@@ -34,9 +34,6 @@ function BookingThree() {
         }
         else if (!RoomNo) {
             setError("Please enter your room number!")
-        }
-        else if (dayjs(StartTime).isBefore(dayjs()) || dayjs(EndTime).isBefore(dayjs())) {
-            setError("Please select a proper slot!")
         }
         else if (dayjs(StartTime).isAfter(dayjs(EndTime))) {
             setError("Please select a proper slot!")
@@ -60,7 +57,7 @@ function BookingThree() {
             }
         })
 
-        if ((Name != '') && (RoomNo) && (dayjs(StartTime).isBefore(dayjs(EndTime))) && (dayjs(StartTime).isAfter(dayjs())) && (dayjs(EndTime).isAfter(dayjs())) && (!conflict)) {
+        if ((Name != '') && (RoomNo) && (dayjs(StartTime).isBefore(dayjs(EndTime))) && (!conflict)) {
             setError('')
             flag = true
         }
@@ -85,15 +82,15 @@ function BookingThree() {
         const Slot = formattedStartTime + '\n' + formattedEndTime
         const formattedName = `${Name} (${RoomNo})`
         const slotdata = {
-            Name: formattedName, RoomNo, Slot, CurrentDay: 'True'
+            Name: formattedName, RoomNo, Slot, CurrentDay: 'False'
         }
         const { response, error1 } = await supabase
-            .from('floor2')
+            .from('floor1_nextday')
             .insert(slotdata)
             .select()
         console.log(response)
         console.log(error1)
-        navigate('/SecondFloor')
+        navigate('/FirstFloor')
     }
     return (
         <div style={{
@@ -110,7 +107,7 @@ function BookingThree() {
                 left: 0
             }}>
                 <header className="booking-page-header">
-                    <Link to="/SecondFloor">
+                    <Link to="/FirstFloor">
                         <div className="booking-back-button">
                             <ArrowBack
                                 sx={{
@@ -125,7 +122,7 @@ function BookingThree() {
                 </header>
             </div>
             <div className="booking-input-section">
-                <div className="booking-date-section">{dayjs().format('MMMM D, YYYY')}</div>
+                <div className="booking-date-section">{dayjs().add(1, 'day').format('MMMM D, YYYY')}</div>
                 <TextField
                     color="white"
                     sx={{
@@ -236,4 +233,4 @@ function BookingThree() {
     )
 }
 
-export default BookingThree
+export default BookingTwoTomorrow

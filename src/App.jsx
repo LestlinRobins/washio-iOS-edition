@@ -5,6 +5,10 @@ import SecondFloor from "./components/secondFloor";
 import BookingOne from "./components/booking_one";
 import BookingTwo from "./components/booking_two";
 import BookingThree from "./components/booking_three";
+import BookingOneTomorrow from "./components/booking_one_tomorrow";
+import BookingTwoTomorrow from "./components/booking_two_tomorrow";
+import BookingThreeTomorrow from "./components/booking_three_tomorrow";
+
 import {
   BrowserRouter as Router,
   Routes,
@@ -40,12 +44,24 @@ function App() {
             element={<BookingOne />}
           />
           <Route
+            path="/BookingOneTomorrow"
+            element={<BookingOneTomorrow />}
+          />
+          <Route
             path="/BookingTwo"
             element={<BookingTwo />}
           />
           <Route
+            path="/BookingTwoTomorrow"
+            element={<BookingTwoTomorrow />}
+          />
+          <Route
             path="/BookingThree"
             element={<BookingThree />}
+          />
+          <Route
+            path="/BookingThreeTomorrow"
+            element={<BookingThreeTomorrow />}
           />
         </Routes>
       </Router>
