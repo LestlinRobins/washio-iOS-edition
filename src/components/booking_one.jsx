@@ -4,19 +4,18 @@ import { TextField, Button } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import { TimePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import dayjs, { Dayjs } from "dayjs";
-import isBetween from 'dayjs/plugin/isBetween'
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { supabase } from "../supabase";
+import isBetween from 'dayjs/plugin/isBetween'
 
 function BookingOne() {
     const [Name, setName] = useState('')
     const [RoomNo, setRoomNo] = useState()
     const [StartTime, setStartTime] = useState(dayjs())
     const [EndTime, setEndTime] = useState(dayjs().add(1, 'hours'))
-    const [PhoneNo, setPhoneNo] = useState()
     const [error, setError] = useState('')
     const [slots, setSlots] = useState([])
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     useEffect(() => {
         getSlots()
@@ -36,9 +35,6 @@ function BookingOne() {
         else if (!RoomNo) {
             setError("Please enter your room number!")
         }
-        else if (!PhoneNo) {
-            setError("Please enter your phone number!")
-        }
         else if (dayjs(StartTime).isBefore(dayjs()) || dayjs(EndTime).isBefore(dayjs())) {
             setError("Please select a proper slot!")
         }
@@ -52,9 +48,19 @@ function BookingOne() {
                 setError("Selected time conflicts with an already existing slot!")
                 conflict = true
             }
+            if (
+                (dayjs(EndTime).isAfter(dayjs(allotedSlotStartTime, 'HH:mm')) &&
+                    dayjs(EndTime).isBefore(dayjs(allotedSlotEndTime, 'HH:mm'))) ||
+                dayjs(EndTime).isSame(dayjs(allotedSlotStartTime, 'HH:mm')) // End time equals start time of the next slot
+            ) {
+                setError("Selected time conflicts with an already existing slot!");
+                conflict = true;
+            } else {
+                conflict = false;
+            }
         })
 
-        if ((Name != '') && (RoomNo) && (PhoneNo) && (dayjs(StartTime).isBefore(dayjs(EndTime))) && (dayjs(StartTime).isAfter(dayjs())) && (dayjs(EndTime).isAfter(dayjs())) && (!conflict)) {
+        if ((Name != '') && (RoomNo) && (dayjs(StartTime).isBefore(dayjs(EndTime))) && (dayjs(StartTime).isAfter(dayjs())) && (dayjs(EndTime).isAfter(dayjs())) && (!conflict)) {
             setError('')
             flag = true
         }
@@ -79,7 +85,7 @@ function BookingOne() {
         const Slot = formattedStartTime + '\n' + formattedEndTime
         const formattedName = `${Name} (${RoomNo})`
         const slotdata = {
-            Name: formattedName, RoomNo, Slot, PhoneNo
+            Name: formattedName, RoomNo, Slot, CurrentDay: 'True'
         }
         const { response, error1 } = await supabase
             .from('floor0')
@@ -119,18 +125,20 @@ function BookingOne() {
                 </header>
             </div>
             <div className="booking-input-section">
+                <div className="booking-date-section">{dayjs().format('MMMM D, YYYY')}</div>
                 <TextField
                     color="white"
                     sx={{
                         border: '1px solid',
                         borderColor: 'white',
                         color: 'white',
-                        width: '90vw'
+                        width: '90vw',
+                        alignSelf: 'center'
                     }}
                     InputLabelProps={{
                         style: {
                             color: "white",
-                            fontFamily: 'Jetbrains-R'
+                            fontFamily: 'Inter-R'
                         }
                     }}
                     label="Name"
@@ -145,12 +153,13 @@ function BookingOne() {
                         border: '1px solid',
                         borderColor: 'white',
                         color: 'white',
-                        width: '90vw'
+                        width: '90vw',
+                        alignSelf: 'center'
                     }}
                     InputLabelProps={{
                         style: {
                             color: "white",
-                            fontFamily: 'Jetbrains-R'
+                            fontFamily: 'Inter-R'
                         }
                     }}
                     label="Room No."
@@ -160,32 +169,11 @@ function BookingOne() {
                         setRoomNo(e.target.value)
                     }}
                 />
-                <TextField
-                    color="white"
-                    sx={{
-                        border: '1px solid',
-                        borderColor: 'white',
-                        color: 'white',
-                        width: '90vw'
-                    }}
-                    InputLabelProps={{
-                        style: {
-                            color: "white",
-                            fontFamily: 'Jetbrains-R'
-                        }
-                    }}
-                    label="Phone No."
-                    type="number"
-                    variant="outlined"
-                    onChange={(e) => {
-                        setPhoneNo(e.target.value)
-                    }}
-                />
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
                     <TimePicker
                         ampm={false}
                         label="Select Start Time"
-                        sx={{ borderColor: 'white' }}
+                        sx={{ borderColor: 'white', marginLeft: '10px' }}
                         renderInput={(params) => (
                             <TextField
                                 {...params}
@@ -202,7 +190,7 @@ function BookingOne() {
                     <TimePicker
                         ampm={false}
                         label="Select Stop Time"
-                        sx={{ borderColor: 'white' }}
+                        sx={{ borderColor: 'white', marginLeft: '10px' }}
                         renderInput={(params) => (
                             <TextField
                                 {...params}
@@ -220,16 +208,19 @@ function BookingOne() {
                 <Button
                     variant="contained"
                     sx={{
-                        backgroundColor: '#673ab7',
+                        backgroundColor: 'black',
                         color: 'white',
                         borderRadius: 3,
                         paddingLeft: 4,
                         paddingRight: 4,
-                        fontFamily: 'Jetbrains-R',
+                        fontFamily: 'Inter-R',
                         textTransform: 'None',
                         fontSize: 16,
                         height: '6vh',
-                        width: '45vw'
+                        width: '45vw',
+                        borderColor: 'white',
+                        border: '1px solid',
+                        marginLeft: '25px'
                     }}
                     onClick={() => evaluateData()}
                 >

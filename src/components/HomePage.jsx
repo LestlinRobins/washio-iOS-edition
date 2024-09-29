@@ -64,7 +64,7 @@ function HomePage() {
             )}
             <div className="home-page-screen">
                 <div className="washing-machine-logo">
-                    <img className="washing-machine-img" src="https://media.discordapp.net/attachments/1284209142076276891/1284210279437172758/main-icon.png?ex=66e5cd86&is=66e47c06&hm=66097d904963f0c1d01e2885bc23464a9330bcb1c3c41086820bbea0efe7e913&=&format=webp&quality=lossless&width=653&height=653" />
+                    <img className="washing-machine-img" src="https://lh3.googleusercontent.com/d/1cHSA2kFOz8e1NQOhggPXCuUQZSI8UfG9=w1000?authuser=1/view" />
                 </div>
                 <div className="home-page-selection">
                     <div style={{ fontFamily: 'Jetbrains-B', fontSize: '8vw' }}>
@@ -132,6 +132,8 @@ function HomePage() {
                     </Link>
                 </div>
                 <div className="home-page-copyright-section">
+                    Kalappurackal Edition
+                    <br></br>
                     Version 1.0.1
                     <br></br>
                     © 2024 Washio. All rights reserved.

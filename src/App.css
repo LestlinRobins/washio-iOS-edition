@@ -33,6 +33,41 @@
   src: url('./fonts/JetBrainsMono-ExtraLightItalic.ttf');
 }
 
+@font-face {
+  font-family: 'Inter-R';
+  src: url('./fonts/Inter-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Inter-L';
+  src: url('./fonts/Inter-Light.ttf');
+}
+
+@font-face {
+  font-family: 'Inter-LI';
+  src: url('./fonts/Inter-LightItalic.ttf');
+}
+
+@font-face {
+  font-family: 'Inter-XL';
+  src: url('./fonts/Inter-ExtraLight.ttf');
+}
+
+@font-face {
+  font-family: 'Inter-XLI';
+  src: url('./fonts/Inter-ExtraLightItalic.ttf');
+}
+
+@font-face {
+  font-family: 'Inter-I';
+  src: url('./fonts/Inter-Italic.ttf');
+}
+
+@font-face {
+  font-family: 'Inter-B';
+  src: url('./fonts/Inter-Bold.ttf');
+}
+
 #root {
   max-width: 1280px;
   -webkit-overflow-scrolling: touch;
@@ -48,7 +83,7 @@ html {
 }
 
 body {
-  background-color: rgba(29, 29, 29, 255);
+  background-color: black;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -108,7 +143,7 @@ body {
 
 .home-page-header-app-name {
   margin-left: 5vw;
-  font-family: 'Jetbrains-B';
+  font-family: 'Inter-B';
   font-size: 5vw;
 }
 
@@ -193,16 +228,15 @@ body {
 .home-page-copyright-section {
   position: fixed;
   left: 0;
-  transform: translate(33%, 0%);
-  bottom: 10vh;
-  font-family: 'Jetbrains-XLI';
+  transform: translate(65%, 0%);
+  bottom: 5vh;
+  font-family: 'Inter-XLI';
   color: grey;
   font-size: 12px;
 }
 
 .ground-page-header {
   display: flex;
-  justify-content: space-around;
   align-items: center;
   flex-direction: row;
   color: rgb(255, 255, 255);
@@ -212,34 +246,43 @@ body {
   height: 7vh;
   left: 0px;
   right: 0px;
-  background-color: rgba(64, 64, 64, 255);
+  background-color: black;
 }
 
 .ground-page-header-app-name {
-  font-family: 'Jetbrains-B';
+  font-family: 'Inter-B';
   font-size: 4vw;
-  margin-left: -5vw;
+  margin-left: -9vw;
+  margin-right: 11vw;
+  position: fixed;
+  left: 25vw;
 }
 
 .back-button {
   display: flex;
   align-self: center;
+  position: fixed;
+  left: 5vw;
+  top: 2.24%;
 }
 
 .refresh-button {
   display: flex;
   align-self: center;
+  position: fixed;
+  right: 5vw;
 }
 
 .date-section {
   align-self: center;
-  font-family: 'Jetbrains-B';
-  font-size: 4.5vw;
+  font-family: 'Inter-B';
+  font-size: 7vw;
   margin-top: 0px;
+  text-align: left;
 }
 
 .table-start {
-  margin-top: 2.5vh;
+  margin-top: 9vh;
 }
 
 .floating-button {
@@ -260,11 +303,11 @@ body {
   top: 0px;
   height: 7vh;
   right: 0px;
-  background-color: rgba(64, 64, 64, 255);
+  background-color: black;
 }
 
 .booking-page-header-app-name {
-  font-family: 'Jetbrains-B';
+  font-family: 'Inter-B';
   font-size: 4vw;
   margin-left: -5vw;
 }
@@ -281,6 +324,20 @@ body {
   gap: 1.5vh;
   position: fixed;
   top: 10vh;
+  height: 100vh;
+  background: radial-gradient(circle at bottom left, rgba(0, 128, 0, 0.6) 10%, transparent 40%);
+  width: 100vw;
+}
+
+.booking-date-section {
+  border: 3px solid #00ff08;
+  width: 50vw;
+  font-family: 'Inter-R';
+  font-size: 20px;
+  align-self: center;
+  padding: 2%;
+  border-radius: 15px;
+  margin-bottom: 1vh;
 }
 
 .MuiInputBase-input {
@@ -293,6 +350,7 @@ body {
 
 .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
   border: none;
+  border-radius: 20px !important;
 }
 
 /* .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
@@ -331,8 +389,61 @@ body {
 }
 
 .room-no-div {
-  background-color: rgb(49, 49, 49);
+  background-color: rgb(34, 34, 34);
   padding-left: 5px;
   padding-right: 5px;
   border-radius: 5px;
+}
+
+.main-div-in-floor {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  position: fixed;
+  top: 10vh;
+  left: 0;
+  align-items: center;
+  background: radial-gradient(circle at bottom left, rgba(0, 128, 0, 0.6) 10%, transparent 40%);
+}
+
+.tab-switcher {
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  position: absolute;
+  left: 50%;
+  top: 16%;
+  transform: translate(-50%, -50%);
+  border: 2px solid #00ff08;
+  padding: 1.5%;
+  border-radius: 20px;
+  width: 58vw;
+  height: 5vh;
+  align-items: center;
+}
+
+.tab-switcher-tab-active {
+  background-color: #00ff08;
+  display: flex;
+  border-radius: 15px;
+  padding-left: 12%;
+  padding-right: 12%;
+  align-items: center;
+  font-weight: bold;
+  font-size: 17px;
+  height: 5vh;
+}
+
+.tab-switcher-tab {
+  padding: 5%;
+  border-radius: 10px;
+  padding-left: 12%;
+  padding-right: 12%;
+  align-items: center;
+  display: flex;
+  font-weight: bold;
+  font-size: 17px;
+  height: 5vh;
 }
