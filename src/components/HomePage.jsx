@@ -6,7 +6,7 @@ import { Info } from "@mui/icons-material";
 function HomePage() {
     const [devInfo, showDevInfo] = useState(false)
     return (
-        <div>
+        <div className="main-home-page-div">
             <header className="home-page-header">
                 <div className="home-page-header-app-name">
                     Wash.io
@@ -67,11 +67,12 @@ function HomePage() {
                     <img className="washing-machine-img" src="https://lh3.googleusercontent.com/d/1cHSA2kFOz8e1NQOhggPXCuUQZSI8UfG9=w1000?authuser=1/view" />
                 </div>
                 <div className="home-page-selection">
-                    <div style={{ fontFamily: 'Jetbrains-B', fontSize: '8vw' }}>
-                        Select your floor
+                    <div style={{ fontFamily: 'Inter-B', fontSize: '10vw', marginBottom: '-10px' }}>
+                        Select your
                     </div>
-                    <div style={{ fontFamily: 'Jetbrains-XLI', fontSize: '4vw', color: 'grey' }}>
-                        Kalapurackal Edition
+                    <div style={{ fontFamily: 'Inter-B', fontSize: '10vw', display: 'flex', flexDirection: 'row' }}>
+                        Floor
+                        <div style={{ color: '#00ff08' }}>.</div>
                     </div>
                 </div>
                 <div className="home-page-buttons">
@@ -79,55 +80,58 @@ function HomePage() {
                         <Button
                             variant="contained"
                             sx={{
-                                backgroundColor: 'white',
-                                color: 'black',
-                                borderRadius: 20,
+                                backgroundColor: 'transparent',
+                                color: 'white',
+                                borderRadius: 3,
                                 paddingLeft: 4,
                                 paddingRight: 4,
                                 fontFamily: 'Jetbrains-R',
                                 textTransform: 'None',
                                 fontSize: 16,
-                                height: '6vh',
-                                width: '50vw'
+                                height: '8vh',
+                                width: '17vw',
+                                border: '2px solid green'
                             }}
                         >
-                            Ground Floor
+                            0
                         </Button>
                     </Link>
                     <Link to="/FirstFloor">
                         <Button
                             variant="contained"
                             sx={{
-                                backgroundColor: 'white',
-                                color: 'black',
-                                borderRadius: 20,
+                                backgroundColor: 'transparent',
+                                color: 'white',
+                                borderRadius: 3,
                                 paddingLeft: 4,
                                 paddingRight: 4,
                                 fontFamily: 'Jetbrains-R',
                                 textTransform: 'None',
                                 fontSize: 16,
-                                height: '6vh',
-                                width: '50vw'
+                                height: '8vh',
+                                width: '14vw',
+                                border: '2px solid green'
                             }} >
-                            First Floor
+                            1
                         </Button>
                     </Link>
                     <Link to="/SecondFloor">
                         <Button
                             variant="contained"
                             sx={{
-                                backgroundColor: 'white',
-                                color: 'black',
-                                borderRadius: 20,
+                                backgroundColor: 'transparent',
+                                color: 'white',
+                                borderRadius: 3,
                                 paddingLeft: 4,
                                 paddingRight: 4,
                                 fontFamily: 'Jetbrains-R',
                                 textTransform: 'None',
                                 fontSize: 16,
-                                height: '6vh',
-                                width: '50vw'
+                                height: '8vh',
+                                width: '14vw',
+                                border: '2px solid green'
                             }} >
-                            Second Floor
+                            2
                         </Button>
                     </Link>
                 </div>

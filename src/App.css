@@ -126,6 +126,16 @@ body {
   color: #888;
 }
 
+.main-home-page-div {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1;
+  background: radial-gradient(circle at top left, rgba(0, 255, 8, 0.4) 10%, transparent 40%);
+}
+
 .home-page-header {
   display: flex;
   justify-content: space-between;
@@ -138,7 +148,6 @@ body {
   height: 7vh;
   left: 0px;
   right: 0px;
-  background-color: rgba(64, 64, 64, 255);
 }
 
 .home-page-header-app-name {
@@ -200,7 +209,7 @@ body {
 }
 
 .washing-machine-logo {
-  top: 8vh;
+  top: 12vh;
   width: 50vw;
   position: fixed;
   align-self: center;
@@ -212,17 +221,19 @@ body {
 
 .home-page-selection {
   position: fixed;
-  left: 0;
-  top: 33vh;
-  transform: translate(10%, 25%);
+  top: 40vh;
+  text-align: left;
+  align-self: center;
 }
 
 .home-page-buttons {
   position: fixed;
-  top: 50vh;
+  top: 55vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 2vh;
+  width: 100vw;
+  transform: translate(22%, 0%);
 }
 
 .home-page-copyright-section {
