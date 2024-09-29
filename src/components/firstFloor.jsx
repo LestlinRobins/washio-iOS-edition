@@ -54,7 +54,17 @@ function FirstFloor() {
                                     key={row.Name}
                                     sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                                 >
-                                    <TableCell sx={{ color: 'white', fontFamily: 'Jetbrains-R' }} component="th" scope="row">{row.Name}</TableCell>
+                                    <TableCell sx={{ color: 'white', fontFamily: 'Jetbrains-R' }} component="th" scope="row">
+                                        {row.Name.slice(0, -4)}
+                                        <div className="data-div">
+                                            <div className="phone-no-div">
+                                                {row.PhoneNo}
+                                            </div>
+                                            <div className="room-no-div">
+                                                KH-{row.RoomNo}
+                                            </div>
+                                        </div>
+                                    </TableCell>
                                     <TableCell sx={{ color: 'white', fontFamily: 'Jetbrains-R', padding: 0, margin: 0 }} align="center">
                                         <p style={{ padding: 0, margin: 0 }}>{(row.Slot).split(" ")[0]}</p>
                                         <p style={{ padding: 0, margin: 0 }}>{(row.Slot).split(" ")[1]}</p>

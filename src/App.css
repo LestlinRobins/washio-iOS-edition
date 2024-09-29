@@ -314,3 +314,25 @@ body {
   display: flex;
   flex-direction: row;
 }
+
+.data-div {
+  max-width: max-content;
+  display: flex;
+  flex-direction: row;
+  gap: 1vw;
+  border-radius: 10px;
+}
+
+.phone-no-div {
+  background-color: rgb(69, 69, 69);
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 5px;
+}
+
+.room-no-div {
+  background-color: rgb(49, 49, 49);
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 5px;
+}
