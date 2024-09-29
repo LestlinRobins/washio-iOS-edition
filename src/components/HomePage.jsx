@@ -90,7 +90,7 @@ function HomePage() {
                                 fontSize: 26,
                                 height: '10vh',
                                 width: '20vw',
-                                border: '2px solid green'
+                                border: '2px solid white'
                             }}
                         >
                             0
@@ -110,7 +110,7 @@ function HomePage() {
                                 fontSize: 26,
                                 height: '10vh',
                                 width: '20vw',
-                                border: '2px solid green'
+                                border: '2px solid white'
                             }} >
                             1
                         </Button>
@@ -129,7 +129,7 @@ function HomePage() {
                                 fontSize: 26,
                                 height: '10vh',
                                 width: '20vw',
-                                border: '2px solid green'
+                                border: '2px solid white'
                             }} >
                             2
                         </Button>

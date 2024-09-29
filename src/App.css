@@ -239,7 +239,7 @@ body {
 .home-page-copyright-section {
   position: fixed;
   left: 0;
-  transform: translate(61%, 0%);
+  transform: translate(50%, 0%);
   bottom: 5vh;
   font-family: 'Inter-I';
   color: rgb(172, 172, 172);
@@ -432,7 +432,7 @@ body {
   border: 2px solid #00ff08;
   padding: 1.5%;
   border-radius: 20px;
-  width: 58vw;
+  width: 64vw;
   height: 5vh;
   align-items: center;
 }
