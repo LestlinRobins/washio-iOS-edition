@@ -1,15 +1,23 @@
 {
   "name": "Wash.io",
-  "icons": [
-    {
-      "src": "public/app-icon.png",
-      "type": "image/png",
-      "sizes": "512x512"
-    }
-  ],
-  "start_url": "https://washio-ios-edition.vercel.app/",
-  "display": "standalone",
+  "short_name": "Wash.io",
+  "description": "Washing machine slot booking app",
+  "categories": ["college", "tool"],
   "theme_color": "#000000",
   "background_color": "#000000",
-  "short_name": "Washio"
+  "display": "standalone",
+  "orientation": "natural",
+  "start_url": "/?application=true",
+  "icons": [
+    {
+      "src": "app-icon192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "app-icon512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
 }
